@@ -1,11 +1,11 @@
 {
-  "name": "parcel-project-template",
+  "name": "christmas_greeting",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://goitacademy.github.io/parcel-project-template",
+  "homepage": "https://iuliia-sokol.github.io/Christmas-greeting-PARALLAX",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /parcel-project-template/"
+    "build": "parcel build src/*.html --public-url /Christmas-greeting-PARALLAX/"
   },
   "repository": {
     "type": "git",
