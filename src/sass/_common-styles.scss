@@ -40,55 +40,168 @@
 }
 .moon__inset {
 }
+
 .building {
-}
-.building_three {
+  & span {
+    width: 110%;
+    left: -5%;
+  }
 }
 .building__inset {
 }
+
+.building_three {
+  & span {
+    background: url('../images/building-03.webp') bottom / auto 100% repeat-x;
+  }
+}
+
 .building_two {
+  & span {
+    background: url('../images/building-02.webp') bottom / auto 100% repeat-x;
+  }
 }
 .building_one {
+  & span {
+    background: url('../images/building-01.webp') bottom / auto 100% repeat-x;
+  }
 }
 .train {
+  & span {
+    min-width: 62.5rem;
+    left: 50%;
+    transform: translate(-50%, 0px);
+    background: url('../images/train.webp') bottom / auto 100% no-repeat;
+  }
 }
 .train__inset {
 }
 .santa {
 }
-.santa__tree {
-}
+
 .santa__inset {
 }
+
+.santa__tree {
+  & span {
+    margin-left: -60vh;
+    transform: rotate(90deg);
+    background: url('../images/christmas-tree.webp') center / auto 25% no-repeat;
+  }
+}
+
 .santa__ball {
 }
 .santa__ball_one {
-}
-.santa__candy {
-}
-.santa__candy_one {
+  & span {
+    margin-top: -10vh;
+    margin-left: -40vh;
+    background: url('../images/ball-01.webp') center / auto 2.5% no-repeat;
+  }
 }
 .santa__ball_two {
+  & span {
+    margin-top: -5vh;
+    margin-left: -27vh;
+    background: url('../images/ball-02.webp') center / auto 1.5% no-repeat;
+  }
 }
+
+.santa__candy {
+}
+
+.santa__candy_one {
+  & span {
+    margin-top: -2vh;
+    margin-left: -35vh;
+    background: url('../images/candy-01.webp') center / auto 4.5% no-repeat;
+  }
+}
+
 .santa__candy_two {
+  & span {
+    margin-left: -23vh;
+    background: url('../images/candy-02.webp') center / auto 3.5% no-repeat;
+  }
 }
 .santa__man {
+  & span {
+    margin-top: -10vh;
+    margin-left: -6vh;
+    background: url('../images/santa.webp') center / auto 25% no-repeat;
+  }
 }
+
 .tree {
+  & span {
+    background: url('../images/tree.webp') bottom / auto 100% repeat-x;
+  }
 }
 .tree__inset {
 }
+
 .stairs {
+  & span {
+    width: 110%;
+    left: -5%;
+    background: url('../images/stairs.webp') bottom / 100% no-repeat;
+  }
 }
 .stairs__inset {
 }
+
 .efx {
+  background: url('../images/noise.webp') center repeat;
+  will-change: auto;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &::before {
+    background: linear-gradient(180deg, #194153 0%, #16233b 100%);
+    opacity: 0.5;
+  }
+
+  &::after {
+    background: radial-gradient(
+      150% 50% at 50% 50%,
+      rgba(4, 33, 58, 0) 0%,
+      #04213a 100%
+    );
+    mix-blend-mode: overlay;
+    opacity: 0.8;
+  }
 }
 .content {
+  padding-top: 300vh;
+  padding-bottom: 3.125rem;
+  color: #fff;
+  font-family: Arial, Helvetica, sans-serif;
 }
 .content__container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 78.75rem;
+  padding: 1.875rem;
+  background-color: rgba(22, 35, 59, 0.8);
 }
 .content__title {
+  font-size: 2.125rem;
+  text-transform: uppercase;
+  margin-bottom: 1.875rem;
 }
 .content__body {
+  & p {
+    line-height: 150%;
+  }
+  & p:not(:last-child) {
+    margin-bottom: 1.875rem;
+  }
 }
