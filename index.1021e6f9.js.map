@@ -1,0 +1,1 @@
+{"mappings":"AAAAA,OAAOC,iBAAiB,QAExB,WACEC,SAASC,gBAAgBC,UAAUC,IAAI,S","sources":["src/js/main.js"],"sourcesContent":["window.addEventListener('load', windowLoad);\n\nfunction windowLoad() {\n  document.documentElement.classList.add('loaded');\n}\n"],"names":["window","addEventListener","document","documentElement","classList","add"],"version":3,"file":"index.1021e6f9.js.map"}
