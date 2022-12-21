@@ -1,35 +1,94 @@
-.container {
-  width: 1260px;
-  margin: 0 auto;
-  padding: 0 45px;
+.wrapper {
 }
-.list-general {
-  list-style: none;
-  padding-left: 0;
-}
-
-.links-general {
-  color: inherit;
-  text-decoration: none;
-}
-
-.image-display {
-  display: block;
+.page {
+  &::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: url('../images/bg.webp') center/cover no-repeat;
+  }
 }
 
-.animate__heartBeat {
-  animation-iteration-count: infinite;
-  animation-duration: 2000ms;
-}
-
-.modal-overlay {
-  width: 100vw;
-  height: 100%;
-  display: block;
+.main-screen {
   position: fixed;
+  width: 100%;
+  min-height: 100vh;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.2);
-  opacity: 1;
-  background-size: cover;
+  pointer-events: none;
+
+  & * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    will-change: transform;
+  }
+}
+
+.moon {
+  & span {
+    background: url('../images/moon.webp') top / 100% no-repeat;
+    height: auto;
+    transform: translate(0px, -50%);
+    padding-bottom: 36%;
+  }
+}
+.moon__inset {
+}
+.building {
+}
+.building_three {
+}
+.building__inset {
+}
+.building_two {
+}
+.building_one {
+}
+.train {
+}
+.train__inset {
+}
+.santa {
+}
+.santa__tree {
+}
+.santa__inset {
+}
+.santa__ball {
+}
+.santa__ball_one {
+}
+.santa__candy {
+}
+.santa__candy_one {
+}
+.santa__ball_two {
+}
+.santa__candy_two {
+}
+.santa__man {
+}
+.tree {
+}
+.tree__inset {
+}
+.stairs {
+}
+.stairs__inset {
+}
+.efx {
+}
+.content {
+}
+.content__container {
+}
+.content__title {
+}
+.content__body {
 }
