@@ -22,7 +22,7 @@
 .audio-btn {
   position: fixed;
   left: 5%;
-  top: 5%;
+  top: 2%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -41,6 +41,7 @@
 
 @media screen and (min-width: $desktop) {
   .audio-btn {
+    top: 5%;
     left: 2%;
   }
 }
@@ -414,7 +415,7 @@ $base: 0.6rem;
     bottom: 20%;
     transform: translateX(-50%) rotate(180deg);
     opacity: 0.6;
-    margin-top: -25vw;
+    margin-top: -35vw;
   }
 }
 
