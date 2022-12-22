@@ -359,8 +359,8 @@ $base: 0.6rem;
   &--main {
     width: 100px;
     position: absolute;
-    left: 40%;
-    bottom: 0;
+    left: 50%;
+    bottom: 10%;
     transform: rotate(180deg);
     opacity: 0.6;
   }
@@ -373,8 +373,8 @@ $base: 0.6rem;
   align-items: center;
   display: block;
   color: #ffdc5e;
-  font-size: 12px;
-  transform: translate(-25%, -50%) rotate(180deg);
+  font-size: 16px;
+  transform: translate(-30%, -50%) rotate(180deg);
   height: 40px;
   max-width: 100px;
   width: fit-content;
