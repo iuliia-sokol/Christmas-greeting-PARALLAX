@@ -13,6 +13,7 @@ function windowLoad() {
   page.addEventListener('mousemove', parallaxAnimation);
 
   function parallaxAnimation(e) {
+    cursorHandle(e);
     const parallaxWidth = window.innerWidth;
     const cX = e.pageX - parallaxWidth / 2;
     cXprocent = (cX / parallaxWidth) * 100;
@@ -31,6 +32,7 @@ function windowLoad() {
     });
     requestAnimationFrame(setParallaxAnimationStyle);
   }
+
   setParallaxAnimationStyle();
 
   // Scroll
@@ -96,4 +98,50 @@ function windowLoad() {
       santaItem.style.left = `${santaAnim.left}%`;
     });
   }
+}
+
+// CURSOR
+// window.addEventListener('mousemove', cursorHandle);
+
+function cursorHandle(e) {
+  //trail
+  [0.7, 0.9, 0.8, 0.5, 0.25, 0.6, 0.4, 0.3, 0.2].forEach(function (i) {
+    const j = (1 - i) * 20;
+    const elem = document.createElement('div');
+    const precision = 30; // 2 decimals
+    const randomnum =
+      Math.floor(
+        Math.random() * (10 * precision - 1 * precision) + 1 * precision
+      ) /
+      (1 * precision);
+
+    const rOpacity = randomnum / 20;
+    const rSize = randomnum / 200;
+
+    elem.style.position = 'fixed';
+    elem.classList.add('star-five');
+    elem.style.zIndex = 10000000;
+    elem.style.transform = `rotate(35deg) scale(${rSize})`;
+
+    elem.style.top =
+      e.pageY -
+      window.scrollY +
+      Math.round(Math.random() * j - j / 2) -
+      100 +
+      'px';
+
+    elem.style.left =
+      e.pageX + Math.round(Math.random() * j - j / 2) - 100 + 'px';
+
+    elem.style.opacity = rOpacity;
+    elem.style.pointerEvents = 'none';
+
+    document.body.appendChild(elem);
+
+    let timerID = window.setTimeout(function () {
+      //   console.log('timer');
+      document.body.removeChild(elem);
+      clearTimeout(timerID);
+    }, Math.round(Math.random() * i * 1500));
+  });
 }
