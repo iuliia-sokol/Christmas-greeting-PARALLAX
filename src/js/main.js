@@ -42,6 +42,7 @@ function windowLoad() {
   const stairs = document.querySelector('.stairs');
   const train = document.querySelector('.train');
   const santaItems = document.querySelectorAll('.santa>*');
+  const mainArrow = document.querySelector('.arrow-container--main');
 
   window.addEventListener('scroll', createPosition);
   createPosition();
@@ -55,6 +56,14 @@ function windowLoad() {
   }
 
   function christmasAnimation(finalPos) {
+    const arrowAnim = {
+      translate: (70 / 100) * finalPos,
+      scale: 1 + (2 / 100) * finalPos,
+    };
+
+    mainArrow.style.cssText = `transform: translate(0, ${arrowAnim.translate}%) 
+    scale(${arrowAnim.scale}) rotate(180deg)`;
+
     const moonAnim = {
       translate: (50 / 100) * finalPos,
       scale: 1 + (2 / 100) * finalPos,
