@@ -1,4 +1,12 @@
+import 'animate.css';
+
 window.addEventListener('load', windowLoad);
+
+const audio = document.getElementById('audio');
+const playBtn = document.querySelector('.audio-btn');
+playBtn.addEventListener('click', e => {
+  audio.play();
+});
 
 function windowLoad() {
   document.documentElement.classList.add('loaded');

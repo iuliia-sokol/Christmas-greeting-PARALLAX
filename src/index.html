@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Merry Christmas!</title>
     <link rel="shortcut icon" type="image/ico" href="./images/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
     <link rel="stylesheet" href="./sass/index.scss" />
 
     <script type="module" src="./index.js"></script>
   </head>
   <body class="page">
+    <audio class="audio" id="audio" preload="none">
+      <source
+        src="./audio/The_Jingle_Bells_-_Jingle_Bell_Rock_(musmore.com).mp3"
+        type="audio/mpeg"
+      />
+    </audio>
     <div class="wrapper">
+      <button class="audio-btn animate__animated animate__pulse" type="button">
+        &#9835;
+      </button>
       <main>
         <div class="main-screen">
           <!-- Moon -->

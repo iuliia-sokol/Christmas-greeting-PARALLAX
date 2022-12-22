@@ -19,6 +19,31 @@
   }
 }
 
+.audio-btn {
+  position: fixed;
+  left: 2%;
+  top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50px;
+  background-color: transparent;
+  box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-size: 18px;
+}
+
+.animate__pulse {
+  animation-iteration-count: infinite;
+  animation-duration: 4000ms;
+}
+
 .page {
   &::before {
     content: '';
@@ -390,7 +415,7 @@ $base: 0.6rem;
 @media screen and (min-width: $tablet) {
   .loaded .arrow-container {
     &--main {
-      margin-top: -60px;
+      margin-top: -40px;
     }
   }
 }
