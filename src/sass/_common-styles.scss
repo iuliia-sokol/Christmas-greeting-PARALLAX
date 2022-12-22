@@ -380,21 +380,21 @@ $base: 0.6rem;
   &--main {
     width: fit-content;
     position: absolute;
-    left: 55%;
+    left: 50%;
     bottom: 20%;
     transform: translateX(-50%) rotate(180deg);
     opacity: 0.6;
   }
 }
 
-@media screen and (min-width: $desktop) {
-  .loaded .arrow-container {
-    &--main {
-      left: 45%;
-      bottom: 20%;
-    }
-  }
-}
+// @media screen and (min-width: $desktop) {
+//   .loaded .arrow-container {
+//     &--main {
+//       left: 45%;
+//       bottom: 20%;
+//     }
+//   }
+// }
 
 .arrow-hint {
   position: absolute;
@@ -404,7 +404,7 @@ $base: 0.6rem;
   display: block;
   color: #ffdc5e;
   font-size: 16px;
-  transform: translate(-30%, -50%) rotate(180deg);
+  transform: translate(-25%, -50%) rotate(180deg);
   height: 40px;
   max-width: 100px;
   width: fit-content;
