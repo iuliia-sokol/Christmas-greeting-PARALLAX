@@ -383,18 +383,17 @@ $base: 0.6rem;
     bottom: 20%;
     transform: translateX(-50%) rotate(180deg);
     opacity: 0.6;
-    margin-top: -40px;
+    margin-top: -15vw;
   }
 }
 
-// @media screen and (min-width: $desktop) {
-//   .loaded .arrow-container {
-//     &--main {
-//       left: 45%;
-//       bottom: 20%;
-//     }
-//   }
-// }
+@media screen and (min-width: $tablet) {
+  .loaded .arrow-container {
+    &--main {
+      margin-top: -60px;
+    }
+  }
+}
 
 .arrow-hint {
   display: flex;
