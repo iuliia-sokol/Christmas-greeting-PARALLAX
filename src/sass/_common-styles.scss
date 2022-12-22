@@ -1,3 +1,24 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  @media screen and (min-width: $mobile) {
+    width: $mobile;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+    padding: 0 32px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    margin: 0 auto;
+    width: $desktop;
+    padding: 0 32px;
+  }
+}
+
 .page {
   &::before {
     content: '';
@@ -357,12 +378,21 @@ $base: 0.6rem;
   // height: 100vh;
 
   &--main {
-    width: 100px;
+    width: fit-content;
     position: absolute;
-    left: 45%;
+    left: 55%;
     bottom: 20%;
-    transform: rotate(180deg);
+    transform: translateX(-50%) rotate(180deg);
     opacity: 0.6;
+  }
+}
+
+@media screen and (min-width: $desktop) {
+  .loaded .arrow-container {
+    &--main {
+      left: 45%;
+      bottom: 20%;
+    }
   }
 }
 
