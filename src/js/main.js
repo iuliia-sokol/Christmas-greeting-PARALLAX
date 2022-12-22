@@ -116,7 +116,7 @@ function cursorHandle(e) {
       (1 * precision);
 
     const rOpacity = randomnum / 20;
-    const rSize = randomnum / 200;
+    const rSize = randomnum / 120;
 
     elem.style.position = 'fixed';
     elem.classList.add('star-five');
