@@ -377,12 +377,13 @@ $base: 0.6rem;
   opacity: 0.6;
 
   &--main {
-    width: 100px;
+    width: max-content;
     position: absolute;
     left: 50%;
     bottom: 20%;
     transform: translateX(-50%) rotate(180deg);
     opacity: 0.6;
+    margin-top: -40px;
   }
 }
 
@@ -396,17 +397,16 @@ $base: 0.6rem;
 // }
 
 .arrow-hint {
-  position: absolute;
   display: flex;
+  flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  display: block;
   color: #ffdc5e;
   font-size: 16px;
   transform: translate(-25%, -50%) rotate(180deg);
   height: 40px;
   max-width: 100px;
-  width: fit-content;
+  width: max-content;
   animation: hint-display 6s ease-out infinite;
 }
 
