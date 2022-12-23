@@ -137,15 +137,18 @@
 
 .moon {
   & span {
-    background: url('../images/moon.webp') top / 100% no-repeat;
+    background: url('../images/kyiv/sky-2.png') top / 100% no-repeat;
     height: auto;
     transform: translate(0px, -50%);
     padding-bottom: 36%;
   }
 }
 
-// .moon__inset {
-// }
+.moon-en {
+  & span {
+    background: url('../images/moon.webp') top / 100% no-repeat;
+  }
+}
 
 .building {
   & span {
@@ -156,7 +159,8 @@
 
 .building_three {
   & span {
-    background: url('../images/kyiv/group-back.png') bottom / auto 100% repeat-x;
+    background: url('../images/kyiv/group-back.png') bottom / auto 100%
+      no-repeat;
   }
 }
 .building_three-en {
@@ -177,7 +181,7 @@
 }
 .building_one {
   & span {
-    background: url('../images/kyiv/group-5.png') bottom / auto 100% repeat-x;
+    background: url('../images/kyiv/group-1.png') bottom / auto 100% repeat-x;
   }
 }
 .building_one-en {
