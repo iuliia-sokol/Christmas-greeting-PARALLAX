@@ -4,8 +4,18 @@ window.addEventListener('load', windowLoad);
 
 const audio = document.getElementById('audio');
 const playBtn = document.querySelector('.audio-btn');
+const stopBtn = document.querySelector('.audio-btn-off');
 playBtn.addEventListener('click', e => {
   audio.play();
+  e.target.classList.add('visually-hidden');
+  stopBtn.classList.remove('visually-hidden');
+});
+
+stopBtn.addEventListener('click', e => {
+  audio.pause();
+  audio.currentTime = 0;
+  playBtn.classList.remove('visually-hidden');
+  stopBtn.classList.add('visually-hidden');
 });
 
 function windowLoad() {

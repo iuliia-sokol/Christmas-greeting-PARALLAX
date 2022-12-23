@@ -37,6 +37,23 @@
   box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
   color: #ffffff;
   font-size: 18px;
+
+  &-off:after {
+    content: '';
+    position: absolute;
+    // height: 34px;
+    border-bottom: 2px solid rgba(245, 245, 245, 0.8);
+    width: 75%;
+    transform: rotate(135deg);
+  }
+
+  &-off:before {
+    content: '';
+    position: absolute;
+    border-bottom: 2px solid rgba(245, 245, 245, 0.7);
+    width: 75%;
+    transform: rotate(45deg);
+  }
 }
 
 @media screen and (min-width: $desktop) {
