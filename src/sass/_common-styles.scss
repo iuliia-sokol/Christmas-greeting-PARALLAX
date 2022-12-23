@@ -137,7 +137,7 @@
 
 .moon {
   & span {
-    background: url('../images/kyiv/sky-2.png') top / 100% no-repeat;
+    background: url('../images/kyiv/sky.png') top / 100% no-repeat;
     height: auto;
     transform: translate(0px, -50%);
     padding-bottom: 36%;
@@ -194,6 +194,12 @@
     min-width: 62.5rem;
     left: 50%;
     transform: translate(-50%, 0px);
+    // background: url('../images/kyiv/santa-fly.png') bottom / auto 100% no-repeat;
+  }
+}
+
+.train-en {
+  & span {
     background: url('../images/train.webp') bottom / auto 100% no-repeat;
   }
 }
@@ -247,6 +253,15 @@
   }
 }
 .santa__man {
+  & span {
+    margin-top: -55vh;
+    margin-left: 8vh;
+    // transform: rotate(135deg);
+    background: url('../images/kyiv/santa-fly.png') bottom / auto 45% no-repeat;
+  }
+}
+
+.santa__man-en {
   & span {
     margin-top: -10vh;
     margin-left: -6vh;
