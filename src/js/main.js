@@ -18,6 +18,8 @@ stopBtn.addEventListener('click', e => {
   stopBtn.classList.add('visually-hidden');
 });
 
+// const langBtn = document.querySelector('.lang-btn');
+
 function windowLoad() {
   document.documentElement.classList.add('loaded');
 

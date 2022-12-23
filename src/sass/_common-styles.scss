@@ -56,9 +56,34 @@
   }
 }
 
+.lang-btn {
+  position: fixed;
+  left: 5%;
+  bottom: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100000;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  width: 34px;
+  height: 34px;
+  border-radius: 50px;
+  background-color: transparent;
+  box-shadow: -2px -2px 5px white, 3px 3px 5px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+  font-size: 16px;
+}
+
 @media screen and (min-width: $desktop) {
   .audio-btn {
     top: 5%;
+    left: 2%;
+  }
+
+  .lang-btn {
+    bottom: 5%;
     left: 2%;
   }
 }
@@ -145,7 +170,7 @@
     background: url('../images/kyiv/group-2.png') bottom / auto 100% repeat-x;
   }
 }
-.building_two {
+.building_two-en {
   & span {
     background: url('../images/building-02.webp') bottom / auto 100% repeat-x;
   }
@@ -491,7 +516,7 @@ $base: 0.6rem;
   align-items: center;
   color: #ffdc5e;
   font-size: 16px;
-  transform: translate(-25%, -50%) rotate(180deg);
+  transform: translate(-30%, -50%) rotate(180deg);
   height: 40px;
   max-width: 100px;
   width: max-content;
