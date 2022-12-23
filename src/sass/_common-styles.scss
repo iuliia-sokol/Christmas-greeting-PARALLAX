@@ -201,6 +201,13 @@
     background: url('../images/christmas-tree.webp') center / auto 25% no-repeat;
   }
 }
+.santa__tree-en {
+  & span {
+    margin-left: -70vh;
+    transform: rotate(90deg);
+    background: url('../images/christmas-tree.webp') center / auto 25% no-repeat;
+  }
+}
 
 .santa__ball_one {
   & span {
