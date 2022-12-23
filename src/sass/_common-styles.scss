@@ -200,13 +200,17 @@
 
 .santa__tree {
   & span {
-    margin-left: -100vh;
-    transform: rotate(90deg);
-    background: url('../images/christmas-tree.webp') center / auto 25% no-repeat;
+    margin-top: 15vh;
+    margin-right: 20vh;
+    transform: rotate(45deg);
+    background: url('../images/kyiv/tree-anim.gif') center / auto 25% no-repeat;
   }
 }
+
 .santa__tree-en {
   & span {
+    margin-top: 0;
+    margin-right: 0;
     margin-left: -70vh;
     transform: rotate(90deg);
     background: url('../images/christmas-tree.webp') center / auto 25% no-repeat;
