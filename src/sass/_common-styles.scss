@@ -514,7 +514,7 @@ $base: 0.6rem;
   &--main {
     width: max-content;
     position: absolute;
-    left: 50%;
+    left: 52%;
     bottom: 20%;
     transform: translateX(-50%) rotate(180deg);
     opacity: 0.6;
@@ -525,6 +525,7 @@ $base: 0.6rem;
 @media screen and (min-width: $tablet) {
   .loaded .arrow-container {
     &--main {
+      left: 50%;
       margin-top: -40px;
     }
   }
@@ -537,7 +538,7 @@ $base: 0.6rem;
   align-items: center;
   color: #ffdc5e;
   font-size: 16px;
-  transform: translate(-30%, -50%) rotate(180deg);
+  transform: translate(-33%, -50%) rotate(180deg);
   height: 40px;
   max-width: 100px;
   width: max-content;
