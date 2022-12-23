@@ -76,6 +76,18 @@
     height: 100%;
     top: 0;
     left: 0;
+
+    background: url('../images/kyiv/night-kyiv.jpg') center/cover no-repeat;
+  }
+}
+.page-en {
+  &::before {
+    content: '';
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
     background: url('../images/bg.webp') center/cover no-repeat;
   }
 }
@@ -119,16 +131,31 @@
 
 .building_three {
   & span {
+    background: url('../images/kyiv/group-back.png') bottom / auto 100% repeat-x;
+  }
+}
+.building_three-en {
+  & span {
     background: url('../images/building-03.webp') bottom / auto 100% repeat-x;
   }
 }
 
 .building_two {
   & span {
+    background: url('../images/kyiv/group-2.png') bottom / auto 100% repeat-x;
+  }
+}
+.building_two {
+  & span {
     background: url('../images/building-02.webp') bottom / auto 100% repeat-x;
   }
 }
 .building_one {
+  & span {
+    background: url('../images/kyiv/group-5.png') bottom / auto 100% repeat-x;
+  }
+}
+.building_one-en {
   & span {
     background: url('../images/building-01.webp') bottom / auto 100% repeat-x;
   }
@@ -144,7 +171,7 @@
 
 .santa__tree {
   & span {
-    margin-left: -60vh;
+    margin-left: -100vh;
     transform: rotate(90deg);
     background: url('../images/christmas-tree.webp') center / auto 25% no-repeat;
   }
@@ -197,12 +224,20 @@
   & span {
     width: 110%;
     left: -5%;
+    background: url('../images/kyiv/group-front.png') bottom / 100% no-repeat;
+  }
+}
+
+.stairs-en {
+  & span {
+    width: 110%;
+    left: -5%;
     background: url('../images/stairs.webp') bottom / 100% no-repeat;
   }
 }
 
 .efx {
-  background: url('../images/noise.webp') center repeat;
+  // background: url('../images/noise.webp') center repeat;
   will-change: auto;
 
   &::before,
@@ -216,7 +251,12 @@
   }
 
   &::before {
-    background: linear-gradient(180deg, #194153 0%, #16233b 100%);
+    background: linear-gradient(
+      180deg,
+      #1f495d 0%,
+      rgba(212, 181, 27, 0.5) 65%,
+      #042561 100%
+    );
     opacity: 0.5;
   }
 
