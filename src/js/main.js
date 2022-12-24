@@ -81,11 +81,11 @@ function windowLoad() {
 
     if (finalPos >= 100) {
       christmasAnimation(100);
-      contentElement.addEventListener('mouseenter', playBells);
+      contentElement.addEventListener('mouseover', playBells);
       contentElement.addEventListener('touchstart', playBells);
     } else {
       christmasAnimation(finalPos);
-      contentElement.removeEventListener('mouseenter', playBells);
+      contentElement.removeEventListener('mouseover', playBells);
       contentElement.removeEventListener('touchstart', playBells);
     }
   }
