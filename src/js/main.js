@@ -66,11 +66,17 @@ function windowLoad() {
   createPosition();
 
   function createPosition() {
+    const audioBells = document.getElementById('audio-bells');
     const contentElement = document.querySelector('.content__container');
     const windowHeight = window.innerHeight;
+
     const finalPos =
       (scrollY / (contentElement.offsetTop - windowHeight)) * 100;
     finalPos < 100 ? christmasAnimation(finalPos) : christmasAnimation(100);
+
+    if (finalPos >= 100) {
+      contentElement.addEventListener('mouseenter', audioBells.play());
+    }
   }
 
   function christmasAnimation(finalPos) {
@@ -169,39 +175,3 @@ function cursorHandle(e) {
     }, Math.round(Math.random() * i * 1500));
   });
 }
-
-// CHECK CONTENT VISIBILITY
-
-const content = document.querySelector('.content__container');
-const audioBells = document.getElementById('audio-bells');
-function jingleBellOn() {
-  audioBells.play();
-}
-
-function isElementInViewport(el) {
-  let top = el.offsetTop;
-  let left = el.offsetLeft;
-  let width = el.offsetWidth;
-  let height = el.offsetHeight;
-
-  while (el.offsetParent) {
-    el = el.offsetParent;
-    top += el.offsetTop;
-    left += el.offsetLeft;
-  }
-
-  return (
-    top < window.pageYOffset + window.innerHeight &&
-    left < window.pageXOffset + window.innerWidth &&
-    top + height > window.pageYOffset &&
-    left + width > window.pageXOffset
-  );
-}
-
-function handleScroll(e) {
-  if (isElementInViewport(content)) {
-    jingleBellOn();
-  }
-}
-
-window.addEventListener('scroll', handleScroll);
