@@ -186,3 +186,158 @@ function cursorHandle(e) {
     }, Math.round(Math.random() * i * 1500));
   });
 }
+
+// CONTENT TEXT
+
+const elts = {
+  text1: document.getElementById('text1'),
+  text2: document.getElementById('text2'),
+};
+
+const texts = [
+  'Merry Christmas!',
+  ' Веселого Різдва! ',
+  ' !عيد ميلاد مجيد ',
+  '圣诞快乐! ',
+  ' Čestit Božić! ',
+  ' Veselé Vánoce! ',
+  'Glædelig Jul!',
+  ' Prettige Kerstdagen! ',
+  'Häid jõule!',
+  'Hauskaa joulua!',
+  'Joyeux Noël!',
+  'Frohe Weihnachten!',
+  'Χαρούμενα Χριστούγεννα!',
+  'Buon Natale!',
+  'メリークリスマス!',
+  '메리 크리스마스! ',
+  'Priecīgus Ziemassvētkus!',
+  'Linksmų šv. Kalėdų!',
+  'Среќен Божиќ!',
+  'God jul! ',
+  'Wesołych Świąt!',
+  'Feliz Natal!',
+  'Crăciun fericit!',
+  'Srećan Božić!',
+  'Kirismas Wanaagsan!',
+  'Feliz Navidad!',
+  'Heri ya krismas!',
+  'З Калядамі!',
+  'Счастливого Рождества!',
+];
+
+const morphTime = 0.7;
+const cooldownTime = 0.5;
+
+let textIndex = texts.length - 1;
+let time = new Date();
+let morph = 0;
+let cooldown = cooldownTime;
+
+elts.text1.textContent = texts[textIndex % texts.length];
+elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+function doMorph() {
+  morph -= cooldown;
+  cooldown = 0;
+
+  let fraction = morph / morphTime;
+
+  if (fraction > 1) {
+    cooldown = cooldownTime;
+    fraction = 1;
+  }
+
+  setMorph(fraction);
+}
+
+function setMorph(fraction) {
+  elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 20)}px)`;
+  elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+  fraction = 1 - fraction;
+  elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 20)}px)`;
+  elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
+  elts.text1.textContent = texts[textIndex % texts.length];
+  elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+}
+
+function doCooldown() {
+  morph = 0;
+
+  elts.text2.style.opacity = '100%';
+  elts.text1.style.opacity = '0%';
+}
+
+function animateText() {
+  requestAnimationFrame(animateText);
+
+  let newTime = new Date();
+  let shouldIncrementIndex = cooldown > 0;
+  let dt = (newTime - time) / 2000;
+  time = newTime;
+
+  cooldown -= dt;
+
+  if (cooldown <= 0) {
+    if (shouldIncrementIndex) {
+      textIndex++;
+    }
+
+    doMorph();
+  } else {
+    doCooldown();
+  }
+}
+animateText();
+
+// CONTENT LETTER
+
+document.querySelector('.envelope').addEventListener('click', function () {
+  if (document.querySelector('.letter').classList.contains('letter--open')) {
+    document.querySelector('.letter').classList.remove('letter--open');
+    document.querySelector('.letter').classList.add('letter--close');
+    setTimeout(function () {
+      document.querySelector('.letter').classList.remove('letter--close');
+    }, 600);
+  } else {
+    document.querySelector('.letter').classList.remove('letter--close');
+    document.querySelector('.letter').classList.add('letter--open');
+  }
+});
+
+document.querySelector('.paper-close').addEventListener('click', function () {
+  document.querySelector('.letter').classList.remove('letter--open');
+  document.querySelector('.letter').classList.add('letter--close');
+
+  setTimeout(function () {
+    document.querySelector('.letter').classList.remove('letter--close');
+  }, 600);
+});
+
+// const openMapModalBtn = document.querySelector('.open-modal');
+// const closeMapModalBtn = document.querySelector('.modal__close-btn');
+// const mapModal = document.querySelector('.modal-overlay');
+// const mapModalWindow = document.querySelector('.modal');
+
+// openMapModalBtn.addEventListener('click', function () {
+//   mapModal.classList.remove('is-hidden');
+// });
+
+// closeMapModalBtn.addEventListener('click', function () {
+//   mapModal.classList.toggle('is-hidden');
+// });
+
+// mapModal.addEventListener('click', e => {
+//   const closeMapModal = e.composedPath().includes(mapModalWindow);
+//   if (!closeMapModal) {
+//     mapModal.classList.add('is-hidden');
+//   }
+// });
+
+// document.addEventListener('keydown', function (e) {
+//   if (e.key === 'Escape') {
+//     mapModal.classList.add('is-hidden');
+//   }
+// });

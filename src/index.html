@@ -132,37 +132,38 @@
           <div class="content__container">
             <h1 class="content__title">Свято наближається!</h1>
             <div class="content__body">
-              <p>
-                Merry Christmas!<br />
-                Веселого Різдва! <br />
-                !عيد ميلاد مجيد <br />
-                圣诞快乐! <br />
-                Čestit Božić! <br />
-                Veselé Vánoce! <br />
-                Glædelig Jul! <br />
-                Prettige Kerstdagen! <br />
-                Häid jõule! <br />
-                Hauskaa joulua! <br />
-                Joyeux Noël! <br />
-                Frohe Weihnachten! <br />
-                Χαρούμενα Χριστούγεννα! <br />
-                Buon Natale! <br />
-                メリークリスマス! <br />
-                메리 크리스마스! <br />
-                Priecīgus Ziemassvētkus! <br />
-                Linksmų šv. Kalėdų! <br />
-                Среќен Божиќ! <br />
-                God jul! <br />
-                Wesołych Świąt! <br />
-                Feliz Natal! <br />
-                Crăciun fericit! <br />
-                Srećan Božić! <br />
-                Kirismas Wanaagsan! <br />
-                Feliz Navidad! <br />
-                Heri ya krismas! <br />
-                З Калядамі! <br />
-                Счастливого Рождества! <br />
-              </p>
+              <div id="word-container">
+                <span id="text1"></span>
+                <span id="text2"></span>
+              </div>
+              <svg id="filters">
+                <defs>
+                  <filter id="threshold">
+                    <feColorMatrix
+                      in="SourceGraphic"
+                      type="matrix"
+                      values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140"
+                    />
+                  </filter>
+                </defs>
+              </svg>
+              <div class="letter">
+  <div class="envelope">
+    <div class="envelope-flap"></div>
+    <div class="envelope-paper"></div>
+    <div class="envelope-detail"></div>
+  </div>
+  <div class="paper">
+    <div class="paper-content">
+      <div class="paper-close">&#10005;</div>
+    </div>
+      <p class="paper-text">HELLO!</p> 
+  </div>
+</div>
+              <!-- <button class="open-modal" type="button">open</button> -->
             </div>
             <div class="arrow-container">
               <div class="chevron"></div>
@@ -171,6 +172,37 @@
             </div>
           </div>
         </section>
+
+        <!-- MODAL -->
+        <!-- <div class="modal-overlay is-hidden" data-map-modal>
+          <div class="modal">
+            <button
+              data-map-close
+              class="modal__close-btn"
+              aria-label="close modal window"
+            >
+              X
+            </button>
+            <div class="modal__wrapper">
+         <div class="letter">
+  <div class="envelope">
+    <div class="envelope-flap"></div>
+    <div class="envelope-paper"></div>
+    <div class="envelope-detail"></div>
+  </div>
+  <div class="paper">
+    <div class="paper-content">
+      <div class="paper-close">x</div>
+      Hey Y'all,</br></br>Have a good day!</br></br>Chris
+    </div>
+  </div>
+</div>
+           </div>
+            </div>
+          </div> -->
+
+
+        </div>
       </main>
     </div>
   </body>
