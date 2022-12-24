@@ -69,13 +69,20 @@ function windowLoad() {
     const audioBells = document.getElementById('audio-bells');
     const contentElement = document.querySelector('.content__container');
     const windowHeight = window.innerHeight;
+    function playBells(e) {
+      audioBells.play();
+    }
 
     const finalPos =
       (scrollY / (contentElement.offsetTop - windowHeight)) * 100;
-    finalPos < 100 ? christmasAnimation(finalPos) : christmasAnimation(100);
+    // finalPos < 100 ?  :
 
     if (finalPos >= 100) {
-      contentElement.addEventListener('mouseenter', audioBells.play());
+      christmasAnimation(100);
+      contentElement.addEventListener('mouseenter', playBells);
+    } else {
+      christmasAnimation(finalPos);
+      contentElement.removeEventListener('mouseenter', playBells);
     }
   }
 
