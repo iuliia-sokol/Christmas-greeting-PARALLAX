@@ -227,10 +227,26 @@
   & span {
     margin-top: -10vh;
     margin-left: -40vh;
+    background: url('../images/kyiv/snow-anim.gif') center / auto 2.5% no-repeat;
+  }
+}
+
+.santa__ball_one-en {
+  & span {
+    margin-top: -10vh;
+    margin-left: -40vh;
     background: url('../images/ball-01.webp') center / auto 2.5% no-repeat;
   }
 }
 .santa__ball_two {
+  & span {
+    margin-top: -5vh;
+    margin-left: -27vh;
+    background: url('../images/kyiv/snow-anim.gif') center / auto 2.5% no-repeat;
+  }
+}
+
+.santa__ball_two-en {
   & span {
     margin-top: -5vh;
     margin-left: -27vh;
@@ -242,6 +258,15 @@
   & span {
     margin-top: -2vh;
     margin-left: -35vh;
+    background: url('../images/kyiv/gold-snowflake-christmas.gif') center / auto
+      4.5% no-repeat;
+  }
+}
+
+.santa__candy_one-en {
+  & span {
+    margin-top: -2vh;
+    margin-left: -35vh;
     background: url('../images/candy-01.webp') center / auto 4.5% no-repeat;
   }
 }
@@ -249,9 +274,18 @@
 .santa__candy_two {
   & span {
     margin-left: -23vh;
+    background: url('../images/kyiv/gold-snowflake-christmas.gif') center / auto
+      3.5% no-repeat;
+  }
+}
+
+.santa__candy_two-en {
+  & span {
+    margin-left: -23vh;
     background: url('../images/candy-02.webp') center / auto 3.5% no-repeat;
   }
 }
+
 .santa__man {
   & span {
     margin-top: -55vh;
