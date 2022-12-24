@@ -130,39 +130,44 @@
         </div>
         <section class="content">
           <div class="content__container">
-            <h1 class="content__title">Santa is coming!</h1>
+            <h1 class="content__title visually-hidden">Santa is coming!</h1>
             <div class="content__body">
-              <p>
-                Merry Christmas!<br />
-                Веселого Різдва! <br />
-                !عيد ميلاد مجيد <br />
-                圣诞快乐! <br />
-                Čestit Božić! <br />
-                Veselé Vánoce! <br />
-                Glædelig Jul! <br />
-                Prettige Kerstdagen! <br />
-                Häid jõule! <br />
-                Hauskaa joulua! <br />
-                Joyeux Noël! <br />
-                Frohe Weihnachten! <br />
-                Χαρούμενα Χριστούγεννα! <br />
-                Buon Natale! <br />
-                メリークリスマス! <br />
-                메리 크리스마스! <br />
-                Priecīgus Ziemassvētkus! <br />
-                Linksmų šv. Kalėdų! <br />
-                Среќен Божиќ! <br />
-                God jul! <br />
-                Wesołych Świąt! <br />
-                Feliz Natal! <br />
-                Crăciun fericit! <br />
-                Srećan Božić! <br />
-                Kirismas Wanaagsan! <br />
-                Feliz Navidad! <br />
-                Heri ya krismas! <br />
-                З Калядамі! <br />
-                Счастливого Рождества! <br />
+              <div class="content__greeting-wrapper">
+                <div id="word-container">
+                  <span id="text1"></span>
+                  <span id="text2"></span>
+                </div>
+                <svg id="filters">
+                  <defs>
+                    <filter id="threshold">
+                      <feColorMatrix
+                        in="SourceGraphic"
+                        type="matrix"
+                        values="1 0 0 0 0
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140"
+                      />
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <p class="content__info">
+                Open the letter to get your New Year wish from Santa
               </p>
+              <div class="letter">
+                <div class="envelope">
+                  <div class="envelope-flap"></div>
+                  <div class="envelope-paper"></div>
+                  <div class="envelope-detail"></div>
+                </div>
+                <div class="paper">
+                  <div class="paper-content">
+                    <div class="paper-close">&#10005;</div>
+                  </div>
+                  <p class="paper-text paper-text-en">HELLO!</p>
+                </div>
+              </div>
             </div>
             <div class="arrow-container">
               <div class="chevron"></div>

@@ -386,12 +386,12 @@
   }
 }
 
-.content__title {
-  font-size: 16px;
-  text-transform: uppercase;
-  margin-bottom: 1.875rem;
-  line-height: 1.5;
-}
+// .content__title {
+//   font-size: 16px;
+//   text-transform: uppercase;
+//   margin-bottom: 1.875rem;
+//   line-height: 1.5;
+// }
 
 @media screen and (min-width: $desktop) {
   .content__title {
@@ -415,6 +415,15 @@
   // & p:not(:last-child) {
   //   margin-bottom: 1.875rem;
   // }
+}
+
+.content__info {
+  font-style: italic;
+  font-size: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 140px;
 }
 
 // Animation
@@ -716,8 +725,7 @@ $base: 0.6rem;
 }
 #filters {
   height: fit-content;
-  max-height: 50px;
-  margin-bottom: 80px;
+  max-height: 10px;
 }
 // LETTER
 
@@ -858,6 +866,7 @@ $base: 0.6rem;
 .paper-text {
   display: block;
   height: fit-content;
+  padding: 0 12px;
 
   font-weight: 500;
   font-size: 16px;

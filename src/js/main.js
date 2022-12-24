@@ -252,12 +252,12 @@ function doMorph() {
 }
 
 function setMorph(fraction) {
-  elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 20)}px)`;
-  elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+  // elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 20)}px)`;
+  // elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
   fraction = 1 - fraction;
-  elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 20)}px)`;
-  elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+  // elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 20)}px)`;
+  // elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
   elts.text1.textContent = texts[textIndex % texts.length];
   elts.text2.textContent = texts[(textIndex + 1) % texts.length];
@@ -284,7 +284,6 @@ function animateText() {
     if (shouldIncrementIndex) {
       textIndex++;
     }
-
     doMorph();
   } else {
     doCooldown();
@@ -293,6 +292,47 @@ function animateText() {
 animateText();
 
 // CONTENT LETTER
+
+const wishesEN = [
+  'Have a sparkling New Year!',
+  'New adventures are around the corner. Happy New Year!',
+  'May the new year bless you with health, wealth, and happiness.',
+  'Out with the old, in with the new! Happy New Year!',
+  'May the new year bring you peace, joy, and happiness.',
+  'Wishing you and yours health and prosperity in the new year.',
+  'Let your dreams take flight in the new year!',
+  'Wishing you nothing but happiness in the new year.',
+  '01.01 is the first blank page of a 365-page book. Write a good one!',
+  'Have a promising and fulfilling New Year!',
+  'May you discover everything you are looking for in the new year right inside yourself!',
+  'As the new year draws close, I hope it`s filled with the promises of a hopeful tomorrow.',
+  'You have come so far already, just think of how much you’ll grow in the year to come!',
+  'Life is short. Dream big and make the most of 2023!',
+  'Happy New Year! May the coming year be full of grand adventures and opportunities.',
+  'It is time to forget the past and celebrate a new start. Happy New Year!',
+  'Happy New Year! I hope all your dreams come true in 2023. Onwards and upwards!',
+];
+
+const wishesUA = [
+  'Хай Новий рік добробут твій покращить, щоб гроші в вас і втілювались мрії.',
+  'Рік Новий — казковий час! Хай здивує щастям вас',
+  'Світла й радощів багато! Щоб життя було, як свято!',
+  'З Новим роком!З новим щастям! Хай завжди в очах іскряться yсміх, радість і кохання.',
+  'Зичу сонця та світлих надій, миру й втіхи на кожному кроці!',
+  'Хай щастя і радість тебе зустрічають, як ніч новорічну бенгальські вогні!',
+  'Кохати бажаю, коханими бути, про все погане навіки забути.',
+  'Бажаю, щоб у Новорічну ніч турботи щезли з твоїх плеч. Живи яскраво та красиво!',
+  'Нехай Новий 2023 рік принесе всім перемогу, мир та процвітання.',
+  'Нехай все найпрекрасніше і чудове трапиться в твоєму шляху. З 2023 роком!',
+  'Хай рік принесе радість, сміх, гарний настрій, тепло домашнього вогнища і щастя!',
+  'Бажаю виконання найпотаємніших бажань!',
+  'Успіхів, везіння і безмежного щастя в новому році!',
+  'Нехай же 2023-й рік подарує найголовніше – перемогу та мир.',
+  'Нехай 12 місяців Нового року дивують тільки приємними новинами.',
+  'Нехай 2023 рік стане найщасливішим у житті.',
+  'З Новим 2023 роком! Нехай він видасться переможним у всіх сенсах!',
+  '2023-й хай буде щасливий. Але головне – нехай він буде переможно мирним.',
+];
 
 document.querySelector('.envelope').addEventListener('click', function () {
   if (document.querySelector('.letter').classList.contains('letter--open')) {
@@ -304,6 +344,19 @@ document.querySelector('.envelope').addEventListener('click', function () {
   } else {
     document.querySelector('.letter').classList.remove('letter--close');
     document.querySelector('.letter').classList.add('letter--open');
+
+    const wishUaElement = document.querySelector('.paper-text');
+    const wishEnElement = document.querySelector('.paper-text-en');
+
+    if (wishUaElement) {
+      let randomWishUA = wishesUA[Math.floor(Math.random() * wishesUA.length)];
+      wishUaElement.textContent = `${randomWishUA}`;
+    }
+
+    if (wishEnElement) {
+      let randomWishEN = wishesEN[Math.floor(Math.random() * wishesEN.length)];
+      wishEnElement.textContent = `${randomWishEN}`;
+    }
   }
 });
 
@@ -315,29 +368,3 @@ document.querySelector('.paper-close').addEventListener('click', function () {
     document.querySelector('.letter').classList.remove('letter--close');
   }, 600);
 });
-
-// const openMapModalBtn = document.querySelector('.open-modal');
-// const closeMapModalBtn = document.querySelector('.modal__close-btn');
-// const mapModal = document.querySelector('.modal-overlay');
-// const mapModalWindow = document.querySelector('.modal');
-
-// openMapModalBtn.addEventListener('click', function () {
-//   mapModal.classList.remove('is-hidden');
-// });
-
-// closeMapModalBtn.addEventListener('click', function () {
-//   mapModal.classList.toggle('is-hidden');
-// });
-
-// mapModal.addEventListener('click', e => {
-//   const closeMapModal = e.composedPath().includes(mapModalWindow);
-//   if (!closeMapModal) {
-//     mapModal.classList.add('is-hidden');
-//   }
-// });
-
-// document.addEventListener('keydown', function (e) {
-//   if (e.key === 'Escape') {
-//     mapModal.classList.add('is-hidden');
-//   }
-// });
