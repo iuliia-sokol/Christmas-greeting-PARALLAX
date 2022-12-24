@@ -67,15 +67,17 @@ function windowLoad() {
 
   function createPosition() {
     const audioBells = document.getElementById('audio-bells');
-    const contentElement = document.querySelector('.content__container');
-    const windowHeight = window.innerHeight;
+
     function playBells(e) {
       audioBells.play();
+      // console.log('bells');
     }
+
+    const contentElement = document.querySelector('.content__container');
+    const windowHeight = window.innerHeight;
 
     const finalPos =
       (scrollY / (contentElement.offsetTop - windowHeight)) * 100;
-    // finalPos < 100 ?  :
 
     if (finalPos >= 100) {
       christmasAnimation(100);
