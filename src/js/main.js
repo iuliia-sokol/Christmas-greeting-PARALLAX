@@ -18,8 +18,6 @@ stopBtn.addEventListener('click', e => {
   stopBtn.classList.add('visually-hidden');
 });
 
-// const langBtn = document.querySelector('.lang-btn');
-
 function windowLoad() {
   document.documentElement.classList.add('loaded');
 
@@ -174,3 +172,39 @@ function cursorHandle(e) {
     }, Math.round(Math.random() * i * 1500));
   });
 }
+
+// CHECK CONTENT VISIBILITY
+
+const content = document.querySelector('.content__container');
+const audioBells = document.getElementById('audio-bells');
+function jingleBellOn() {
+  audioBells.play();
+}
+
+function isElementInViewport(el) {
+  var top = el.offsetTop;
+  var left = el.offsetLeft;
+  var width = el.offsetWidth;
+  var height = el.offsetHeight;
+
+  while (el.offsetParent) {
+    el = el.offsetParent;
+    top += el.offsetTop;
+    left += el.offsetLeft;
+  }
+
+  return (
+    top < window.pageYOffset + window.innerHeight &&
+    left < window.pageXOffset + window.innerWidth &&
+    top + height > window.pageYOffset &&
+    left + width > window.pageXOffset
+  );
+}
+
+function handleScroll(event) {
+  if (isElementInViewport(content)) {
+    jingleBellOn();
+  }
+}
+
+window.addEventListener('scroll', handleScroll);
