@@ -128,14 +128,12 @@ function windowLoad() {
 }
 
 // CURSOR
-// window.addEventListener('mousemove', cursorHandle);
 
 function cursorHandle(e) {
-  //trail
   [0.7, 0.9, 0.8, 0.5, 0.25, 0.6, 0.4, 0.3, 0.2].forEach(function (i) {
     const j = (1 - i) * 20;
     const elem = document.createElement('div');
-    const precision = 30; // 2 decimals
+    const precision = 30;
     const randomnum =
       Math.floor(
         Math.random() * (10 * precision - 1 * precision) + 1 * precision
@@ -166,7 +164,6 @@ function cursorHandle(e) {
     document.body.appendChild(elem);
 
     let timerID = window.setTimeout(function () {
-      //   console.log('timer');
       document.body.removeChild(elem);
       clearTimeout(timerID);
     }, Math.round(Math.random() * i * 1500));
@@ -182,10 +179,10 @@ function jingleBellOn() {
 }
 
 function isElementInViewport(el) {
-  var top = el.offsetTop;
-  var left = el.offsetLeft;
-  var width = el.offsetWidth;
-  var height = el.offsetHeight;
+  let top = el.offsetTop;
+  let left = el.offsetLeft;
+  let width = el.offsetWidth;
+  let height = el.offsetHeight;
 
   while (el.offsetParent) {
     el = el.offsetParent;
@@ -201,7 +198,7 @@ function isElementInViewport(el) {
   );
 }
 
-function handleScroll(event) {
+function handleScroll(e) {
   if (isElementInViewport(content)) {
     jingleBellOn();
   }
